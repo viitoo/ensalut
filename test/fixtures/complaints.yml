@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  empresa: MyString
+  num_contrato: MyString
+  num_contrato_acceso: MyString
+  cups: MyString
+  num_contador: MyString
+  tinc: false
+
+two:
+  empresa: MyString
+  num_contrato: MyString
+  num_contrato_acceso: MyString
+  cups: MyString
+  num_contador: MyString
+  tinc: false

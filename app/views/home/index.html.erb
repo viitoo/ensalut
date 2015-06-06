@@ -1,0 +1,334 @@
+      <header id="home" class="intro">
+          <div class="overlay-dark">
+              <div class="intro-body">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="carousel-wrapper">
+                                          <div class="carousel slide carousel-fade">
+                                            <div class="carousel-inner">   
+                                            <% @i=0 %>
+                                                <% for item in @slide%>                                               
+                                                 <% if @i==0 %>
+                                                   <div class="item active">  
+                                                        <span class="text-big"><%=item.texto1  %></span><br>
+                                                        <button class="btn btn-outline btn-xl">Leer más</button>
+
+                                                  <% @i=1 %>
+                                                  <%else%>
+                                                   <div class="item">
+                                                    <span class="text-big"><%=item.texto1  %></span><br>
+                                                    <button class="btn btn-outline btn-xl">Leer más</button>
+  
+                                                 <% end %> 
+                                                </div>
+                                               
+                                                <% end %>                                                                            
+                                          </div>
+                                          </div> 
+                              </div>
+                      </div>
+                  </div>
+
+                <div id="fundraiser-bar" class="bottom-bar-responsive bg-brand-secondary-darkest">
+                       <div class="col-md-8 fundraiser-progress-bar animated-longer-delay-3 fadeIn">
+                           <div class="vert-centered-wrapper-120px"> 
+                              <div class="vert-centered">
+                                  <div class="progress">
+                                        <div class="progress-bar progress-bar-tertiary" role="progressbar"  style="width:60%;">
+                                          <h3><span class="responsive-hide">Número de reclamaciones hasta el momento:</span> &nbsp;</h3>
+                                        </div>
+                                        <h3 class="goal"><span class="responsive-hide"></span> <b><%= Complaint.all.count%></b></h3>
+                                   </div>
+                              </div>
+                           </div>
+                      </div> 
+                       
+                      <div class="col-md-2 col-sm-3 col-xs-12  make-a-donation  animated-longer-delay-10 fadeIn">
+                          <div class="vert-centered-wrapper-120px"> 
+                               <div class="vert-centered">  
+                          
+                                 <%= link_to "Formula tu reclamación ahora", new_user_registration_path,:class=>"btn btn-primary btn-lg btn-rounded-edge btn-extra-padding" %>
+
+			       </div>
+                          </div>
+                      </div> 
+              </div> 
+          </div></div>
+      </header><!--=== END intro ===-->  
+
+
+
+
+      <section id="about" class="bg-brand-secondary-dark">
+          <div class="col-lg-12 inner-container text-center wow animated fadeInDown" data-wow-offset="10">
+              <h1>Nuestros Objetivos?</h1>
+              <div class="accent-rule-short"></div>
+              <div class="vert-centered-wrapper-150px">
+                  <div class="vert-centered">
+                          <div class="carousel slide carousel-fade" id="carousel_fade">
+                            <div class="carousel-inner">  
+                            <%@i = 0 %> 
+                            <% for somos in @slide %>
+                            <% if @i==0 %>
+                              <div class="item active">
+                              <% @i = 1%>       
+                            <%else%>
+                              <div class="item">       
+                            <% end %>  
+                                      <h2><span class="emphasis"></span><%=somos.somos %>...</h2>
+                              </div> 
+                            <% end -%>
+                            </div>
+                           
+                          </div> <!-- /end carousel  -->    
+                      </div> <!-- /end vert centered inside wrapper -->    
+                   </div> <!-- /end vert centered and animation wrapper -->  
+               </div>             
+          <div class="clearfix"></div>
+       </section><!--=== / END about  ===-->
+
+
+       <section id="process" class="bg-brand-warning-med">
+            <div class="col-lg-4 col-md-4 bg-brand-warning">
+                <div class="responsive-hide">
+                    <div class="triangle-right wow animated-longer-delay-3 fadeIn"><span class="text-big"><i class="fa fa-caret-right text-warning"></i></span></div>
+                </div>
+                <div class="col-lg-12 col-md-12 inner-container-small wow animated fadeIn" data-wow-offset="10">
+                    <div class="pull-left icon-circle-md">
+                        <button class="btn-circle btn-white"><i class="fa fa-file-text fa-2x"></i></button>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        <h2>Lee nuestro Blog</h2>
+                        <p> Obten las ultimas noticias de nuestro blog, participa activamente en nuestros post, realizando comentarios.<br><br>
+                        <a href="http://espainetsalut.wordpress.com/"><button class="btn btn-black btn-sm">Visitar el Blog</button></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 bg-brand-warning-med">
+                <div class="responsive-hide">
+                    <div class="triangle-right wow animated-longer-delay-5 fadeIn"><span class="text-big"><i class="fa fa-caret-right text-warning-darker"></i></span></div>
+                </div>
+                <div class="col-lg-12 col-md-12 inner-container-small wow animated-longer-delay-3 fadeIn" data-wow-offset="10">
+                    <div class="pull-left icon-circle-md">
+                        <button class="btn-circle btn-white"><i class="fa fa-users fa-2x"></i></button>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        <h2>Reclamo colectivo</h2>
+                        <p>Ofrecemos a la sociedad la posibilidad de realizar una reclamación colectiva y de emprender acciones judiciales.<br><br>
+                        <button class="btn btn-black btn-sm">Formula tu Reclamo</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 bg-brand-warning-darker">
+                <div class="col-lg-12 col-md-12 inner-container-small wow animated-longer-delay-5 fadeIn" data-wow-offset="10">
+                    <div class="pull-left icon-circle-md">
+                        <button class="btn-circle btn-white"><i class="fa fa-globe fa-2x"></i></button>
+                    </div>
+                    <div class="col-lg-9 col-md-9">
+                        <h2>Impacto Mundial</h2>
+                        <p> Aenean sed massa vel metus porttitor volutpat. Integer vehicula nisl at porttitor aliquet. Id dapibus tellus vel.<br><br>
+                        <button class="btn btn-black btn-sm">Let's Get Started</button>
+                        </p>
+                    </div>
+                </div>
+            </div><div class="clearfix"></div>
+         </section><!--=== / END process  ===-->
+ 
+
+            <section id="events">
+              <div class="bg-white">
+                    <div class="inner-container overlay-light row-of-columns"><!-- used 'row-of-columns' anytime columns will eventually stack in resposive mode adds bottom margin to all inner columns when window less than 1200px   -->
+                       <!-- section header -->
+                           <div class="row text-center">
+                              <div class="col-lg-12 col-sm-12 wow animated fadeInDown">
+                                <h1 class="">Noticias y Eventos</h1>
+                                <div class="accent-rule-short"></div>
+                                <h2>Organizamos una variedad de eventos y hacemos publicaciones que ayudan a las  comunidades a tomar conciencia sobre el   impacto que generan las nuevas tecnologias en la salud.</h2>
+                              </div>
+                           </div><!-- / end section header -->
+                           <!-- tabs -->
+                           <div class="col-sm-8 wow animated-longer-delay-1 fadeIn">      
+                           <!-- Nav tabs -->
+                                <ul class="nav nav-tabs nav-justified" role="tablist">
+                                  <li class="active large"><a href="#recent-news" role="tab" data-toggle="tab">Noticias</a></li>
+                                  <li class="large"><a href="#upcoming-events" role="tab" data-toggle="tab">Eventos</a></li>
+                                </ul>
+                    <!-- Tab panes -->
+
+
+
+                                <div class="tab-content bg-white">
+                                      <!-- tab pane 1 -->
+                                      <div class="tab-pane active" id="recent-news">
+                                        <div id="custom-scrollbar-rec-news" class="custom-scrollbar">
+                                              <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                                              <div class="viewport">
+                                                  <ul class="list-unstyled list-vert-solid-line-bottom overview col-lg-11 col-xs-11">
+                                                         <% @rss.items.each_with_index do |item,i| %>
+                                                            <li>
+                                                            <% break if i == 4%>
+                                                              <h4><%=link_to "#{item.title.upcase}","#{item.link}" %></h4></a>
+                                                              <span class="time-stamp"><%= "#{item.pubDate.strftime('%d/%m/%Y')}"%></span>
+                                                            </li>
+                                                         <% end %>
+                                                          
+
+                                                    </ul>
+                                               </div><!-- / end viewport -->
+                                          </div><!-- / end custom-scroll bar wrapper -->
+                                      </div><!-- / end tab pane 1 -->
+                                      <!-- :fecha, :hora, :lugar, :nombre-->
+                                      <!-- tab pane 2 -->
+                                      <div class="tab-pane" id="upcoming-events">
+                                        <!-- carousel -->
+                                            <div class="carousel slide carousel-fade" id="carousel_2">
+                                              <div class="carousel-inner">   
+                                                   <!-- item 1  -->
+                                                   <div class="item active">     
+                                                   <% for calendario in @eventos %>  
+                                                        <div class="col-lg-12 row-of-columns">
+                                                            <div class="col-md-3 bg-brand-primary">
+                                                                <div class="event-date text-center ">
+                                                                    <h4 class="bold" ><%=calendario.fecha.strftime("%B")%></h4>
+                                                                    <h1><%=calendario.fecha.strftime("%d")%></h1>     
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-9">
+                                                              <span class="event-icon"><i class="fa fa-book fa-2x text-warning"></i></span>
+                                                                <h4><%=calendario.nombre%></h4>
+                                                                <br>
+                                                                <ul class="list-inline list-unstyled event-details list-vert-solid-line-left">
+                                                                    <li><i class="fa fa-clock-o"></i>&nbsp;&nbsp;<%=calendario.hora.strftime("%l:%M %p")%> </li>
+                                                                    <li><i class="fa fa-map-marker"></i>&nbsp;&nbsp;<%=calendario.lugar%></a></li>
+                                                                    <li><a href="javascript:void(0)">RSVP on Facebook</a> </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                      <div class="clearfix"></div>
+                                                      <hr class="medium">
+
+                                                        <% end -%>
+                                                
+                                                   </div> <!-- /end item 1  -->   
+                                                   
+                                               
+                                             
+                                              </div> <!-- /end carousel-inner  -->    
+                                              
+                                              <!-- controls -->
+                                              <a class="left carousel-control" href="#carousel_2" role="button" data-slide="prev">
+                                                <span class="glyphicon glyphicon-chevron-left text-secondary-lighter"></span>
+                                              </a>
+                                              <a class="right carousel-control" href="#carousel_2" role="button" data-slide="next">
+                                                <span class="glyphicon glyphicon-chevron-right text-secondary-lighter"></span>
+                                              </a>
+                                              
+                                            </div> <!-- /end carousel  -->   
+                                      </div><!-- / end tab pane 2 -->
+                                      
+                                      <!-- tab pane 3 -->
+                                   
+                                      <div class="clearfix"></div>
+                                </div> 
+                        </div><!-- / end tabs --> 
+                       
+                        <!-- recent campaign carousel -->
+                        <div class="col-sm-4 widget-campaign wow animated-longer-delay-1 fadeIn">    
+                          <div class="carousel slide carousel-fade" id="carousel_3">
+                               <div class="carousel-inner">   
+                                   <!-- item 1  -->
+                                   <div class="item active"> 
+                                        <div class="panel">
+                                            <div class="panel-header">
+                                               <img src="img/carousel-tn-children-01.png" class="img-responsive col-xs-12 no-padding"  alt="image"/><!-- / css hack: 'col-xs-12 no-padding' added as workaround due to image not resizing once responsive col kicks in -->
+                                               <div class="clearfix"></div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <h4><a href="sample-campaign.html">Enrichment Camps</a></h4>
+                                                <p>Nam consequat lacus purus, ac hendrerit ipsum pellentesque ut. Mauris orci ante, sodales ut lorem sed, semper aliquam diam. Sit amet tellus velit.</p>
+                                                <div class="col-lg-12 no-padding">
+                                                    <div class="progress progress-xs">
+                                                      <div class="progress-bar progress-bar-tertiary" role="progressbar"  aria-valuenow="60" aria-valuemin="0" aria-valuemax="60" style="width:50%"></div>
+                                                      
+                                                 </div>
+                                             </div>
+                                            </div><div class="clearfix"></div>
+                                            <div class="panel-footer text-center">
+                                                <div class="col-xs-4">
+                                                    <h3>50%</h3>
+                                                    <small>funded</small>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <h3>$500</h3>
+                                                    <small>raised</small>
+                                                </div>
+                                                <div class="col-xs-4">
+                                                    <h3>13</h3>
+                                                    <small>Days left</small>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div><!-- /end panel  -->
+                                     </div><!-- /end item 1  -->
+                                     <!-- item 2  -->
+                                     <div class="item">
+                                        <div class="panel">
+                                                <div class="panel-header">
+                                                   <img src="img/gal-tn-feet-01.jpg" class="img-responsive col-xs-12 no-padding"  alt="image"><!-- / css hack: 'col-xs-12 no-padding' added as workaround due to image not resizing once responsive col kicks in -->
+                                                   <div class="clearfix"></div>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <h4><a href="sample-campaign.html">Family Engagement</a></h4>
+                                                    <p>Nam consequat lacus purus, ac hendrerit ipsum pellentesque ut. Mauris orci ante, sodales ut lorem sed, semper aliquam diam. Sit amet tellus velit.</p>
+                                                    <div class="col-lg-12 no-padding">
+                                                        <div class="progress progress-xs">
+                                                          <div class="progress-bar progress-bar-tertiary" role="progressbar"  aria-valuenow="30" aria-valuemin="0" aria-valuemax="30" style="width:30%">
+                                                          </div>
+                                                     </div>
+                                                 </div>
+                                                </div><div class="clearfix"></div>
+                                                <div class="panel-footer text-center">
+                                                    <div class="col-xs-4">
+                                                        <h3>30%</h3>
+                                                        <small>funded</small>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <h3>$1200</h3>
+                                                        <small>raised</small>
+                                                    </div>
+                                                    <div class="col-xs-4">
+                                                        <h3>24</h3>
+                                                        <small>Days left</small>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div><!-- /end panel  -->
+                                   </div><!-- /end item 2  -->
+                        </div><!-- /end recent campaign carousel -->
+                    </div><!-- /end inner container -->
+               </div><!-- /end background container -->
+
+              <!-- Sample Map Modal for Upcoming Events -->
+              <div class="modal fade" id="mapModal">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-body modal-body-margin-top">
+              <!-- map -->
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><br>
+                      <h4 class="modal-title">Bookstore Cafe</h4>
+                      <p>Court St., Brooklyn, <br>
+                      NY 11201
+                      <br><br>
+                      <span class="text-primary"> <a href="javascript:void(0)">Map</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:void(0)">Directions</a></span>
+                      <br><br>
+            <span class="time-stamp">Hours: Mon–Fri: 10 AM–9 PM, Sat–Sun: 10 AM–5 PM</span>
+                      </p>                    
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+            </div></div>
+         </section><!--=== / END news & events  ===--> 
+        

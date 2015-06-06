@@ -1,0 +1,95 @@
+                                                                                             
+<%= link_to "Imprimir", "#", onclick: "printPage()" %>
+
+<h3><center>QÜESTIONARI</center></h3>
+
+<p>
+<p align="justify">
+A continuació es detallen les dades a lliurar a l’Associació ENSALUT (també anomenada “l’Associació”), als efectes de lliurar còpia de la documentació desenvolupada per aquesta entitat, a fi i efecte d’iniciar accions legals i judicials per part dels usuaris contra la implantació dels comptadors de telegestió de subministrament elèctric
+</p>
+<br />
+<b>Cognoms, Nom: </b><%= @usuario.cognoms%> <%= @usuario.nom%>
+<br />
+<b>NIF/NIE: </b><%= @usuario.nif%>
+<br />
+<b>Adreça: </b><%= @usuario.adreca%>
+<br />
+<b>Població :</b><%= @usuario.poblacio%>
+<br />
+<b>Codi Postal i Província: </b><%= @usuario.postal%>
+<br />
+<b>Telèfons / Mòbil: </b><%= @usuario.telefono_casa%> <%= @usuario.telefono_celular%> 
+<br />
+<b>Correu electrònic: </b> <%= @usuario.email%> 
+<br />
+<b>Empresa distribuïdora: </b> <%= @denuncia.empresa %>
+<br />
+<b>Contracte Núm.: </b><%= @denuncia.num_contrato %>
+<br />
+<b>Núm. Contracte Accés: </b><%= @denuncia.num_contrato_acceso %>
+<br />
+<b>CUPS: </b><%= @denuncia.cups %>
+<br />
+<b>Núm. de comptador segons el contracte: </b><%= @denuncia.num_contador %>
+      <br />                                                                                 
+<b>Tinc nou comptador: </b><% if @denuncia.tinc %>
+								Si
+						   <%else%>
+								No
+						   <% end -%>
+								
+
+
+
+
+
+
+
+      <br />           <br />     
+<p align="justify">
+Les persones que facin els tràmits personalment o a càrrec de tercers, diferents a l’Associació ENSALUT,utilitzant totalment o parcialment els documents lliurats per l’Associació, es comprometen a informar-l’hi de la presentació i resultat dels expedients incoats.
+<br /><br />
+<b>Les persones que desitgin que l’Associació ENSALUT els trameti els expedients faran una aportació sense ànim de lucre a l’Associació per import de 10 euros</b>
+<br /><br />
+<b>
+Desitjo que l’Associació ENSALUT trameti els meus expedients</b>
+<br /><br />
+
+Reconec que el contingut de les cartes i altra documentació no pública que rebi de l’Associació ENSALUT és propietat intel·lectual d’aquesta Associació, no el puc modificar sense la seva autorització expressa i no puc fer un altre ús que el previst per aquesta associació respecte l’esmentada propietat.
+
+El sotasignat autoritza a l’Associació ENSALUT a utilitzar-les dades de caràcter personal ales qualstingui accésamb motiu del present acord, únicament i exclusivament perl’exercici dels serveis inclosos en el present document.
+
+Per tal motiu, s’informa de manera expressa al sotasignat, qui consent de forma expressa, escrita i inequívoca, en el tractament de les seves dades personals obtingudes en el desenvolupament del present document i el seu contingut.
+
+S’informa al sotasignat dels següents extrems:
+
+L’existència d’un fitxer de caràcter personal amb les finalitat aquí expressades,essent els destinataris de la informació qualsevol instància administrativa o judicial que l’exigeixi d’acord amb l’exposat en el present document.
+Els drets d’accés, rectificació i cancel·lació regulats en l’actual legislació.
+L’existència del responsable del’esmentat tractament de dades, que és Eduard Antequera López  a qui es dirigirà qualsevol notificació sobre els drets recollits en el present document, al correu electrònic cartesensalut@gmail.com
+L’obligació de l’Associació ENSALUT de mantenir la més estricta confidencialitat dins del marc de l’exposat en el present document, respecte de les dades obtingudes.
+L’Associació ENSALUT adoptarà les mesures necessàries que garanteixin la seguretat de les esmentades dades.
+
+
+</p>
+
+<br /><br /><br /><br /><br />
+<table>
+	<tr>
+		<td class="col-md-10">___________________</td>
+		<td class="col-md-6">___________________</td>
+	</tr>
+	<tr>
+		<td class="col-md-10">DATA I LLOC </td>
+		<td class="col-md-7">SIGNATURA</td>
+	</tr>
+
+</table>
+                        
+
+
+</p>
+<script>
+function printPage() {
+    window.print()
+}
+</script>

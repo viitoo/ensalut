@@ -1,0 +1,26 @@
+<h2><i class="fa fa-wrench"></i>&nbspConfiguración</h2>
+
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <b>Texto del Slide:</b>
+  <%= @configuracion.texto1 %>
+</p>
+
+
+<p>
+  <b>Somos:</b>
+  <%= @configuracion.somos %>
+</p>
+
+
+
+<%= link_to edit_configuracion_path(@configuracion), :class=> "btn btn-warning btn", :role=>"button" do%>
+  <i class="fa fa-pencil-square-o"> Editar</i>
+<% end -%>
+ &nbsp
+<%= link_to configuracions_path, :class=> "btn btn-danger btn", :role=>"button" do %>
+  <i class="fa fa-arrow-left"> Volver</i>
+<% end -%>
+

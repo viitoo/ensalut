@@ -1,0 +1,76 @@
+<style>
+.modal {
+    overflow-y: scroll;
+
+  }
+</style>
+ <script type="text/javascript">
+            $(window).load(function(){
+                $('#myModal').modal('show');
+            });
+
+            $('#myModal').modal('toggle')
+
+        </script>
+
+
+<h1>Nueva Denuncia</h1>
+<!-- Button to trigger modal -->
+
+<!-- Modal -->
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg ativa-scroll">
+    <div class="modal-content">
+      <div class="modal-header">
+        <center><h4 class="modal-title" id="myModalLabel">WEB ENSALUT, APARTADOS RECLAMACIONES A IBERDROLA Y A ENDESA</h4></center>
+      </div>
+      <div class="modal-body">
+       “La Asociación ENSALUT actúa en representación de los consumidores para vehicular, de acuerdo a los fines y objetivos establecidos en sus estatutos y aprobados por el Departamento de Justicia de la Generalitat de Cataluña, las reclamaciones presentadas por los usuarios a las compañías eléctricas IBERDROLA y Endesa por la instalación de los contadores telegestionables con tecnología PLC.”
+
+<h4>Artículo 2 de los Estatutos de la Asociación ENSALUT</h4>
+
+<p> 
+Los fines de la asociación son:
+<br />
+1) Difundir a la sociedad los riesgos y peligros que implican para la salud los campos electromagnéticos de alta y baja frecuencia, las radiaciones ionizantes y no ionizantes, la electricidad estática, los materiales tóxicos de construcción y los efectos de las nuevas tecnologías.
+<br />
+2) Informar sobre todo lo relacionado con las enfermedades del Síndrome de Sensibilización Central, la electrohipersensibilidad y la Lipoatrofia Semicircular, promover la concienciación dentro y fuera de la comunidad médica del impacto y la importancia de estas enfermedades y reivindicar su estudio en profundidad.
+<br />
+3) Informar sobre las medidas preventivas que se pueden adoptar ante estas radiaciones y sobre cómo atenuar sus efectos.
+<br />
+4) Proporcionar información sobre cuáles son los medios legales para que los afectados puedan defender sus derechos.
+<br /><br />
+<b>Para conseguir sus fines, la asociación realizará las siguientes actividades:</b>
+<br />
+1) Aglutinar el colectivo de personas más amplio posible para buscar y recoger información sobre la naturaleza de estas radiaciones y sobre los problemas que por esta causa se estén generando en cualquier lugar específico y en cualquier ámbito, ya sea particular, colectivo, laboral, privado o público.
+<br />
+2) Para facilitar este trabajo, la asociación establecerá relaciones de información mutua, ayuda, colaboración, intercambio y asesoramiento con otras asociaciones, entidades e instituciones públicas y, con el tiempo, pretende federarse con entidades del mismo ámbito para aumentar la efectividad y el campo de acción.
+<br />
+
+3) Organizará asambleas informativas abiertas y se ofrecerá como intermediaria para presentar demandas colectivas realizando las actividades o actuaciones que considere adecuadas dentro del marco legal.
+<br />
+Queda excluido todo ánimo de lucro. </p>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'form' %>
+
+
+<%= link_to complaints_path, :class=> "btn btn-danger btn", :role=>"button" do %>
+	<i class="fa fa-arrow-left"> Volver</i>
+<% end -%>
+
+
+     

@@ -1,0 +1,37 @@
+<h2><i class="fa fa-wrench"></i>&nbspConfiguración</h2>
+
+<table class="table table-hover">
+  <thead>
+    <th>Creación</th>
+    <th>Objetivos</th>
+    <th></th>
+ 
+  </thead>
+
+<% @configuracions.each do |configuracion| %>
+  <tr>
+    <td><%= configuracion.created_at.strftime("%d/%m/%Y") %></td>
+    <td><%= configuracion.somos.split[0..15].join(" ") %>...</td>
+    <td align ="right">
+      <%= link_to configuracion do %> 
+            <i class="fa fa-fw fa fa-share-square-o"></i> Mostrar </a>                   
+      <% end -%>
+      <%= link_to  edit_configuracion_path(configuracion) do %> 
+            <i class="fa fa-fw  fa fa-pencil-square-o"></i> Editar </a>                   
+      <% end -%>
+      <%= link_to  configuracion, method: :delete, data: { confirm: 'Seguro que desea eliminarlo?' } do %>
+        <i class="fa fa-fw fa-trash-o"></i> Eliminar </a>                   
+      <% end -%>
+
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+  
+
+<%= link_to new_configuracion_path ,:class=> "btn btn-primary btn", :role=>"button" do%>
+                <i class="fa fa-fw  fa fa-plus-square-o"></i> Nueva Configuración </a>                   
+
+<% end %> 

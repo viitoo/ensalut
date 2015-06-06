@@ -1,0 +1,11 @@
+<h2><i class="fa fa-edit"></i> Editar Evento</h2>
+<%= render 'form' %>
+
+
+<%= link_to @evento ,:class=> "btn btn-warning btn", :role=>"button" do%>
+	<i class="fa fa-file-text"> Mostrar</i>
+<% end -%>  &nbsp
+<%= link_to eventos_path, :class=> "btn btn-danger btn", :role=>"button" do %>
+	<i class="fa fa-arrow-left"> Volver</i>
+<% end -%>
+

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  texto1: MyText
+  texto2: MyText
+  texto3: MyText
+  texto4: MyText
+  somos: MyText
+
+two:
+  texto1: MyText
+  texto2: MyText
+  texto3: MyText
+  texto4: MyText
+  somos: MyText

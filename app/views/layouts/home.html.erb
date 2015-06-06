@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>::: Ensalut  - Associacio :::</title>
+        <%= stylesheet_link_tag "bootstrap.min.css" %>
+        <%= stylesheet_link_tag "one-page-base.css" %>
+        <%= stylesheet_link_tag "act.css"  %>
+        <%= stylesheet_link_tag "animate.css" %>
+        <%= stylesheet_link_tag "hover-effects.css" %>
+        <%= stylesheet_link_tag "prettyPhoto.css" %>
+        <%= stylesheet_link_tag "bootstrap-datetimepicker.css" %>
+        <%= stylesheet_link_tag "tinyscrollbar.css" %>
+    <!-- fuentes -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+     <%= stylesheet_link_tag "font-awesome.css" %>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript">
+            function submitContactForm(){
+                $.post('contact.html', $('#contactform').serialize(), function(response){
+                    $('#contactResponse').html(response);
+                }, 'html');
+            }
+ 	</script>
+    
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <div id="preloader-wrapper">
+        <div class="preloader">
+              &nbsp;
+        </div>
+    </div>
+  
+    <!--=== NAVEGACION ===-->  
+      <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+          <div class="container-wide">
+                  <div class="navbar-header">
+                            
+                      <a id="logo"  href="#home"><%= image_tag "logo.png" %>
+                  </div>
+  
+              <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                  <ul class="nav navbar-nav">
+                          <li class="first"><a href="#home" class="hidden-li"></a></li>
+                          <li class="page-scroll">
+                              <a href="#about">La Asociación</a>
+                          </li>
+                          <li class="page-scroll">
+                            <a href="#events">Noticias</a>
+                          </li>
+                           <li class="page-scroll">
+                            <%= link_to "Registro", "#" %>
+                          </li>
+                          <li class="page-scroll">
+                            <%= link_to "Contactos", "#" %>
+                          </li>
+                          <li class="page-scroll">
+                            <%= link_to "Usuarios",complaints_path %>
+                          </li>
+                       
+                  </ul>
+                
+              </div>
+          </div>
+      </nav>
+
+      <div class="modal fade" id="donateModal" style="overflow:visible!important">
+        <div class="modal-dialog modal-lg text-center">
+          <div class="modal-content">
+              <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h1>Donate Now </h1>
+                <div class="accent-rule-short"></div>
+                <h2>Join us in helping people survive and rebuild their lives. </h2>
+                <ul class="list-unstyled list-inline">
+                    <li><button type="button" class="btn btn-primary btn-xl btn-block">$15</button></li>
+                    <li><button type="button" class="btn btn-primary btn-xl btn-block">$25</button></li>
+                    <li><button type="button" class="btn btn-primary btn-xl btn-block">$50</button></li>
+                    <li><button type="button" class="btn btn-primary btn-xl btn-block">$75</button></li>
+                    <li><button type="button" class="btn btn-primary btn-xl btn-block">$100</button></li>
+                    <li>
+                        <div class="control-group">
+                          <div class="form-control-donate controls">
+                            <input name="textinput" placeholder="$ Other Amount" class="form-control" type="text">
+                          </div>
+                        </div>
+                    </li>
+                </ul>
+                <br>
+                <!-- monthly / one-time -->
+                      <form class="form-horizontal text-center">
+                        <fieldset>
+                        <div class="form-group">
+                          <div class="col-md-12"> 
+                            <label class="radio-inline" for="radios-s">
+                              <input name="radios" id="radios-s" value="1" checked="checked" type="radio">
+                              Single Donation
+                            </label> 
+                            <label class="radio-inline" for="radios-m">
+                              <input name="radios" id="radios-m" value="2" type="radio">
+                              Monthly Donation
+                            </label> 
+                          </div>
+                      </div>
+                      </fieldset>
+                    </form>
+                <br>
+                <button type="button" class="btn btn-tertiary btn-xl btn-rounded-edge" data-dismiss="modal">Continue</button> 
+                <br><br>                     
+            </div>
+          </div><!-- / modal-content -->
+        </div><!-- / modal-dialog -->
+      </div><!--=== / END donate modal ===-->
+
+      
+  <%= yield %>
+
+      <!--=== About Carousel ===-->
+       
+
+        <!--=== PROCESS ===--> 
+        
+          
+         <!--=== NEWS & EVENTS ===-->
+      
+       
+       
+       
+   	  <!--=== CONTACT ===-->
+    
+        
+      <!--=== FOOTER ===-->
+      <section id="footer">
+          <!-- Row 1 -->
+              <div class="row footer-top">
+                  <div class="inner-container-small wow animated fadeIn">
+                      <div class="col-md-3">
+                            <!-- Mission -->
+                            <div class="headline"><h5>Mission</h5></div>  
+                            <p>Act is a one-page template designed with non-profits in mind. The download includes a number of components to get you started including an email template along with a blog skin.  </p><!-- end Mission -->
+                            
+                            <!-- Monthly Newsletter -->
+                            <div class="headline"><h5>Monthly Newsletter</h5></div> 
+                            <p>Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
+                            <form class="footer-subscribe">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Email Address">                            
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button">Subscribe</button>
+                                    </span>
+                                </div>                  
+                            </form><!-- end Monthly Newsletter -->
+                      </div>
+                      <div class="col-md-3">
+                                <div class="content-stacked">
+                                    <!-- Community -->
+                                    <div class="headline-first"><h5>Community</h5></div>
+                                          <ul class="list-unstyled list-vert-solid-line">
+                                              <li><i class="fa fa-angle-right text-primary"></i><a href="javascript:void(0)">Our Issues Blog</a></li>
+                                              <li><i class="fa fa-angle-right text-primary"></i><a href="javascript:void(0)">Calendar of Events</a></li>
+                                              <li><i class="fa fa-angle-right text-primary"></i><a href="javascript:void(0)">Membership</a></li>
+                                              <li><i class="fa fa-angle-right text-primary"></i><a href="javascript:void(0)">History</a></li>
+                                              <li><i class="fa fa-angle-right text-primary"></i><a href="javascript:void(0)">Donors</a></li>
+                                              <li><i class="fa fa-angle-right text-primary"></i><a href="javascript:void(0)">Related</a></li>
+                                          </ul><!-- / end Community -->
+                                    <div class="clearfix"></div>
+                             </div>
+                      </div>
+                      <div class="col-md-3">
+                            <!-- Recent Blog Entries -->
+                              <div class="blog-posts">
+                                  <div class="headline"><h5>Recent Blog Entries</h5></div>
+                                  <div class="post col-lg-12 no-padding">
+                                      <a href="javascript:void(0)"><strong class="text-primary">Syria: the Dangers</strong><br> 
+                                      Home replaced by a perilous sea journey to Italy...</a><br>
+                                      <i><small>Posted by Administrator</small></i>
+                                  </div>          	
+                                  <div class="post col-lg-12 no-padding">
+                                      <a href="javascript:void(0)"><strong class="text-primary">Displacement of thousands</strong><br>
+                                      <i>Now headed for a region that’s already overstretcheded...</i></a><br>
+                                      <i><small>Posted by Administrator</small></i>                           	
+                                  </div> 
+                                      
+                                  <div class="post col-lg-12 no-padding">
+                                      <a href="javascript:void(0)"><strong class="text-primary">Six months of fighting</strong><br>
+                                      <i>A generation of children at risk...</i></a>    <br>
+                                      <i><small>Posted by Administrator</small></i>                       	
+                                   </div> 
+                             </div><!-- / end recent blog entries -->
+                      </div>
+                      <div class="col-md-3 last">
+                        <div class="headline-first"><h5>Photostream</h5></div>
+					    <!-- Flickr -->
+                        <div id="flickr-wrapper"><div id="flickr-stream"></div></div><!-- / end flickr -->
+                      </div>
+                      <div class="clearfix"></div>
+                   </div><!-- / end inner container -->
+              </div><!-- / end Row 1 -->
+			 <!-- Row 2 -->
+              <div class="row footer-bottom">
+                  <div class="inner-container-small wow animated fadeIn">
+                      <div class="col-lg-3 col-sm-12 left"><p><small class="transparent-50">© 2014 Junta ensalut. All Rights Reserved.</small></p></div>
+                      <div class="col-lg-3 col-sm-12 pull-right">
+                           <div class="list-social transparent-50 pull-right">
+                                <ul class="list-inline">
+                                    <li><a href="javascript:void(0)"><i class="fa fa-facebook transparent"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="fa fa-twitter transparent"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="fa fa-dribbble transparent"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="fa fa-tumblr transparent"></i></a></li>
+                                    <li><a href="javascript:void(0)"><i class="fa fa-flickr transparent"></i></a></li>
+                                </ul>
+                            </div>
+                      </div>
+                  </div>
+              </div><!-- / end Row 2 -->
+        </section><!--=== END Footer ===-->       
+   
+        <!-- Core JavaScript Files -->
+
+  <%= javascript_include_tag "jquery-1.11.0.js" %>
+  <%= javascript_include_tag "bootstrap.min.js" %>
+	    <!-- Plugins -->
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
+  <%= javascript_include_tag "modernizr.js" %>
+  <%= javascript_include_tag "jquery.easing.min.js" %>
+  <%= javascript_include_tag "wow.js" %>
+  <%= javascript_include_tag "jquery.prettyPhoto.js" %>
+        <script>
+            new WOW().init();
+        </script>
+
+  <%= javascript_include_tag "jquery.tinyscrollbar.js" %>
+  <%= javascript_include_tag "jquery.countTo.js" %>
+    <%= javascript_include_tag "moment.js" %>
+  <%= javascript_include_tag "bootstrap-datetimepicker.en-au.js" %>
+  <%= javascript_include_tag "bootstrap-datetimepicker.js" %>
+  <%= javascript_include_tag "act.js" %>
+
+
+	
+	</body>
+</html>

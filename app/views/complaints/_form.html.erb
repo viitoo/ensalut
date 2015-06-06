@@ -1,0 +1,57 @@
+<em>“Usted se adhiere a las instrucciones descritas en el presente escrito. Usted autoriza a la Asociación ENSALUT para vehicular su denuncia y para que ésta pueda ser tramitada por sus servicios jurídicos. Toda la documentación que usted aporte estará en todo momento a disposición de nuestros servicios jurídicos para hacer uso de ellos en la denuncia tramitada a Iberdrola. Si en algún momento del proceso usted decide no continuar, es libre de renunciar, pero sigue dando su consentimiento para que la documentación aportada sea utilizada en la mencionada denuncia.<br /><br /></em>
+<%= simple_form_for @complaint, :html => {:class => 'form-horizontal' } do |f| %>
+<% if !f.error_notification.blank? %>
+    <div class="alert alert-danger" >
+        <%= f.error_notification %>
+    </div>
+<% end %>  
+
+  <div class="form-inputs">
+    <%= f.input :empresa, :label=> "Empresa distribuïdora" %>
+    <%= f.input :num_contrato, :label => "Contracte Núm." %>
+    <%= f.input :num_contrato_acceso,:label=>"Núm. Contracte Accés " %>
+    <%= f.input :cups ,:label => "CUPS"%>
+    <%= f.input :num_contador ,:label => "Núm. de comptador segons el contracte"%>
+    <%= f.input :tinc , collection: ['Si','No'],  input_html: { class: 'radio-inline' } ,:label => "Tinc nou comptador"%>
+    <%= f.input :user_id,  :as => :hidden, :input_html=>{:value => current_user.id} %>
+  </div>
+  <br />
+  <p align="justify">
+
+<em>La información contenida en esta autorización administrativa y la documentación aportada por el arriba firmante se incorporarán a un fichero cuyo titular es la Asociación ENSALUT. Para ejercer los derechos de acceso, rectificación, oposición y cancelación de los datos aquí facilitados, rogamos lo comuniquen por correo postal a la <b>Asociación ENSALUT, C/Ronda Guinardó 145 Ático 2ª, Barcelona 08041,</b> o por correo electrónico a <b><%= mail_to "juntaensalut@gmail.com"%></b> y <b><%= mail_to "enscomptadors@gmail.com"%></b> y dicha entidad le pondrá a usted en contacto con el administrador de la información aportada. Queda garantizada la confidencialidad de la información aportada según la ley de protección de datos personales.</em> </p>
+
+<br />
+
+    <label class="checkbox" style="padding:0px 40px;">
+    <input type="checkbox" id="checkme" />
+
+       Acepto los Terminos y las Condiciones.
+    </label>
+<br /><br />
+  
+  <div class="form-actions">
+  <% if f.object.new_record?  %>
+    <%= f.button :submit, "Nueva Denuncia",:class=>"btn btn-primary btn",:id => "denuncia",:disabled => true%>  
+  <% else %>,:id=>"denuncia"
+    <%= f.button :submit, "Actualizar Denuncia",:class=>"btn btn-primary btn",:id => "denuncia",:disabled => true%>  
+  <% end %>  
+  
+  
+  
+  </div>
+<% end %>
+  <hr />
+
+
+<script>
+var checker = document.getElementById('checkme');
+var sendbtn = document.getElementById('denuncia');
+checker.onchange = function(){
+  if(this.checked){
+    sendbtn.disabled = false;
+  } else {
+    sendbtn.disabled = true;
+  }
+  
+}
+</script>

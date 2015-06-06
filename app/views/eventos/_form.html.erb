@@ -1,0 +1,19 @@
+<%= simple_form_for @evento, :html => {:class => 'form-horizontal' } do |f| %>
+
+  <%= f.error_notification %>
+<div class="row">
+  <div class="col-lg-6">
+  <div class="form-inputs">
+    <%= f.input :fecha %>
+    <%= f.input :nombre, input_html: { :cols => 3,  class: "form-control" }  %>
+    <%= f.input :hora  %>
+    <%= f.input :lugar, input_html: {:rows => 3,  class: "form-control" }%>
+  </div>
+<br >
+
+  <div class="form-actions">
+    <%= f.button :submit ,:class=>"btn btn-primary btn"%>
+  </div>
+  </div></div>
+<% end %>
+  <hr />

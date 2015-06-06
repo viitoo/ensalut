@@ -1,0 +1,50 @@
+<% if @complaints.count < 1%>
+    <h3>Ud. no ha realizado ninguna Denuncia</h3>
+<%else%>
+
+<h2><i class="fa fa-bell"></i>&nbspDenuncias</h2>
+
+<table class="table table-hover">
+  <thead>
+    <th>Empresa distribuïdora</th>
+    <th>Contracte Núm</th>
+    <th>Núm. Contracte Accés</th>
+    <th>Cups</th>
+    <th>Núm. de comptador segons el contracte</th>
+    <th></th>
+    
+  </thead>
+
+<% @complaints.each do |complaint| %>
+  <tr>
+    <td><%= complaint.empresa %></td>
+    <td><%= complaint.num_contrato %></td>
+    <td><%= complaint.num_contrato_acceso %></td>
+    <td><%= complaint.cups %></td>
+    <td><%= complaint.num_contador %></td>
+    
+<td align ="right">
+      <%= link_to complaint do %> 
+            <i class="fa fa-fw fa fa-share-square-o"></i> Mostrar </a>                   
+      <% end -%>
+      <%= link_to  edit_complaint_path(complaint) do %> 
+            <i class="fa fa-fw  fa fa-pencil-square-o"></i> Editar </a>                   
+      <% end -%>
+      <%= link_to  complaint, method: :delete, data: { confirm: 'Seguro que desea eliminarlo?' } do %>
+        <i class="fa fa-fw fa-trash-o"></i> Eliminar </a>                   
+      <% end -%>
+
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+<% end -%>
+
+<%= link_to new_complaint_path ,:class=> "btn btn-primary btn", :role=>"button" do%>
+                <i class="fa fa-fw  fa fa-plus-square-o"></i> Nueva Denuncia </a>                   
+
+<% end %> 

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Empresa:</b>
+  <%= @complaint.empresa %>
+</p>
+
+<p>
+  <b>Num contrato:</b>
+  <%= @complaint.num_contrato %>
+</p>
+
+<p>
+  <b>Num contrato acceso:</b>
+  <%= @complaint.num_contrato_acceso %>
+</p>
+
+<p>
+  <b>Cups:</b>
+  <%= @complaint.cups %>
+</p>
+
+<p>
+  <b>Num contador:</b>
+  <%= @complaint.num_contador %>
+</p>
+
+<p>
+  <b>Tinc:</b>
+  <%= @complaint.tinc %>
+</p>
+
+<%= link_to questionari_path(@complaint), :class=> "btn btn-info btn", :role=>"button" do%>
+  <i class="fa fa-print"> Imprimir</i>
+<% end -%>
+
+
+<%= link_to edit_complaint_path(@complaint), :class=> "btn btn-warning btn", :role=>"button" do%>
+  <i class="fa fa-pencil-square-o"> Editar</i>
+<% end -%>
+ &nbsp
+<%= link_to complaints_path, :class=> "btn btn-danger btn", :role=>"button" do %>
+  <i class="fa fa-arrow-left"> Volver</i>
+<% end -%>
+
+
+

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Administracion - ENSALUT</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+        <%= stylesheet_link_tag "bootstrap_admin.min.css" %>
+        <%= stylesheet_link_tag "sb-admin.css" %>
+        <%= stylesheet_link_tag "font-awesome.min.css" %>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+ <div class="container">   
+
+          <div id="signupbox" style="margin-top:20px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Registrate</div>
+                       </div>  
+                        <div class="panel-body" >
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name),:html=> {class:'form-horizontal'}) do |f| %>
+                                		    <p>  
+<%= f.error_notification   %></p>
+                                
+                                  
+                                <div class="form-group">
+                                    <label for="nom" class="col-md-3 control-label">Nom</label>
+                                    <div class="col-md-9">
+    									<%= f.input :nom, :required => true , :autofocus =>true,input_html: {class: "form-control"} , label: false %>
+                                    </div>
+                                </div>
+                                    
+                                <div class="form-group">
+                                    <label for="cognoms" class="col-md-3 control-label">Cognoms</label>
+                                    <div class="col-md-9">
+										<%= f.input :cognoms, :required => true , :autofocus =>true, input_html: {class: "form-control"}, label: false%>
+							        </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="NIF" class="col-md-3 control-label">NIF/NIE</label>
+                                    <div class="col-md-9">
+								<%= f.input :nif, label: 'NIF/NIE',input_html: {class: "form-control"}, label: false %>
+                                    </div>
+                                </div>
+
+      							<div class="form-group">
+                                    <label for="adreca" class="col-md-3 control-label">Adreça</label>
+                                    <div class="col-md-9">
+								<%= f.input :adreca ,input_html: {class: "form-control", :rows =>4}, label: false %>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="poblacio" class="col-md-3 control-label">Població</label>
+                                    <div class="col-md-9">
+                                       	<%= f.input :poblacio, input_html: {class: "form-control"}, label: false%>
+                                    </div>
+                                </div>
+                                    
+
+                                <div class="form-group">
+                                    <label for="Postal" class="col-md-3 control-label">Codi Postal</label>
+                                    <div class="col-md-9">
+                                       	<%= f.input :postal, input_html: {class: "form-control"}, label: false%>
+                                    </div>
+                                </div>
+                                    
+    							<div class="form-group">
+                                    <label for="telefonos" class="col-md-3 control-label">Telèfons & Mòbil</label>
+                                    <div class="col-md-9">
+                                    	<%= f.input :telefono_casa, input_html: {class: "form-control"}, label: false %><br />
+										<%= f.input :telefono_celular, input_html: {class: "form-control"}, label: false %>
+
+                                    </div>
+                                </div>
+                                    
+
+<hr />
+                                <div class="form-group">
+                                    <label for="email" class="col-md-3 control-label">Email</label>
+                                    <div class="col-md-9">
+    									<%= f.input :email, :required => true, :autofocus => true , input_html: {class: "form-control"}, label: false %>
+                                    </div>
+                                </div>
+								<div class="form-group">
+                                    <label for="password" class="col-md-3 control-label">Password</label>
+                                    <div class="col-md-9">
+    									<%= f.input :password, :required => true, :autofocus => true , input_html: {class: "form-control"}, label: false%>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password-confirmation" class="col-md-3 control-label">Confirma el Password</label>
+                                    <div class="col-md-9">
+    									<%= f.input :password_confirmation, :required => true, :autofocus => true , input_html: {class: "form-control"}, label: false%>
+                                    </div>
+                                </div>
+
+								<div class="form-group">
+                                    <label for="password-confirmation" class="col-md-3 control-label">Responda la siguiente pregunta<br />
+</label>
+                                    <div class="col-md-9">
+										<%= f.label :humanizer_answer, @user.humanizer_question %>
+                                    </div>
+                                      <div class="col-md-9">
+										<%= f.input :humanizer_answer , input_html: {class: "form-control"} ,label: false%>
+										<%= f.hidden_field :humanizer_question_id %>
+
+                                    </div>
+                                </div>
+
+
+                                 <div class="form-group">
+                                 <div class="col-md-3"></div>
+                                    <div class="col-md-4">
+                                        <%= f.button :submit, "Registrarse" ,:class=>"btn btn-primary" %>
+                                   </div>
+                                 </div>
+                                    <div class="col-md-5">
+                                        <div style="border-top: 0px solid#888; padding-top:15px; font-size:85%" >
+                                           <%= render "devise/shared/links" %>
+
+                                        </div>
+                                    </div>
+                                </div>    
+
+
+                                </div>
+                                
+                                
+                                  <% end %>
+                         </div>
+                    </div>
+    </div> 
+
+</div>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+  </div>
+
+
