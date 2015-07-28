@@ -19,9 +19,15 @@ group :development do
 	gem 'sqlite3'
 	gem 'better_errors'
 	gem 'thin'
+	gem 'capistrano',         require: false
+	gem 'capistrano-rvm',     require: false
+	gem 'capistrano-rails',   require: false
+	gem 'capistrano-bundler', require: false
+	gem 'capistrano3-puma',   require: false
+
 
 end
-
+gem 'puma'
 gem "twitter-bootstrap-rails"
 
 
@@ -42,11 +48,13 @@ gem 'jquery-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
+
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+#gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
