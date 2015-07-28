@@ -1,4 +1,4 @@
-server '104.200.17.182 ', port: 22, roles: [:web, :app, :db], primary: true
+server 'github.com ', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:kw0lf/enslaut.git'
 set :application,     'ensalut'
